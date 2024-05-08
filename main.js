@@ -482,3 +482,220 @@ switch(opretor)
 */
 
 
+
+// ===21.Write a JavaScript function to calculate the sum of two numbers ===
+
+function Sumtion(num1,num2){
+    console.log( "sumtion of numbers = ",num1+num2);
+}
+
+
+Sumtion(10,30)
+
+
+
+// ===22.Write a JavaScript function to check if a given string is a palindrome ===
+
+function checkPalindrom(str){
+
+    if( str==str.split('').reverse().join('')){
+        console.log(str,` =>Yes, this String  is a palindrome`);
+    }
+    else{
+        console.log(str,`=>No, this String  is not  a palindrome`);
+
+    }
+}
+checkPalindrom("MohhoM")
+checkPalindrom("Amira")
+
+
+
+
+//===23.Write a JavaScript program to reverse a given string ===
+
+
+
+
+function reverseString(str){
+console.log(str," =>Reversed String is", str.split('').reverse().join(""))
+}
+reverseString("Amira")
+//===24.Write a JavaScript function that takes an array of numbers and returns anew array with only the even numbers===
+ 
+
+
+function evenNum(arr){
+newArr=[]
+    for (let i=0;i<arr.length;i++){
+
+        if (arr[i]%2==0){
+            newArr.push(arr[i]) }
+    }
+    console.log(" Even numbers is => ",newArr);
+}
+
+evenNum([1,2,16,4,,32,31,5,8])
+
+// ===25.Implement a deep clone function in JavaScript that creates a copy of anested object or array without any reference to the original.===
+
+let arr=[[1,2,3],[4,5,6]]
+// let spread=[...arr]
+
+let deep= JSON.parse(JSON.stringify(arr))
+// spread[0][1]=10
+deep[0][1]=10
+console.log("arr",arr);
+console.log("deep",deep);
+
+
+// === 26. Implement a function to reverse a string without using the built-in reverse ()method ===
+
+function revString(str){
+    arr=[]
+    let newStr=str.split('')
+    for(let i=0;i<newStr.length;i++){
+        arr.unshift(newStr[i])
+    }
+    console.log("The Reversed String is",arr.join(""));
+
+}
+revString("Ahmed")
+
+
+
+
+// ===27. Implement a function to find the sum of all the numbers in an array. ===
+
+
+function sumAll(arr){
+    let sumNum=0
+for (let i=0;i<arr.length;i++){
+
+    sumNum+=arr[i]
+}
+console.log("Sumtion of all numbers in array =",sumNum)
+
+}
+
+sumAll([1,2,5,5,3,4,10,70])
+
+
+// === 28. Write a function that accepts a number and returns its factorial (e.g., factorial of 5 is 5 x 4 x 3 x 2 x 1). ===
+
+
+function calcFactorial(num){
+    let fact=1 ;
+    for(let i=num ; i>0 ;i--)
+{      fact*=i
+
+    var res=`factorial of ${num} =`
+
+}
+console.log(res ,fact);
+}
+calcFactorial(8)
+
+
+
+// === 29. Implement a function that returns the average value of numbers in an array.===
+
+
+function calcAverage(arr)
+
+{ let len=arr.length
+
+    let sumNum=0
+    for (let i=0;i<arr.length;i++){
+    
+        sumNum+=arr[i]
+    }
+    let res= sumNum/len
+console.log("The Average value of the the numbers = " ,res);
+
+
+}
+
+calcAverage([10,10,10,5,5])
+
+
+
+// === 30. Implement a function that finds the index of a specific element in an array. If the element is not found, the function should return -1===
+
+function findIndex(arr,element){
+
+if (arr.includes(element)){
+let index=arr.indexOf(element);
+
+return index;
+
+    }else{
+        return -1
+    }
+
+}
+
+console.log( `the index of that element is`,findIndex(["aya","amira","sara","rima"],"rima"));
+
+// === 31. How would you check if a number is an integer?==
+//  ====================================we can check using abuilt in function "isInteger"======================================
+function isInteger(num){
+
+    return Number.isInteger(num)
+}
+
+console.log(isInteger(7));
+// ========================================Using Module Operator===================================
+
+function checkInteger(num){
+return num %1==0;
+
+}
+console.log(checkInteger(5.2));
+
+// ===32. Create a function that takes the age in years and returns the age in days.===
+function getAgeInDays(ageInYears){
+    console.log(` The age of ${ageInYears} Years  = ${ageInYears*365} Days`);
+    return ageInYears*365
+}
+getAgeInDays(23)
+// === 34. Explain what a callback function is and provide a simple example. ===
+  
+/* 
+A callback function is a function that is passed as an argument to another function and is then executed inside that function. 
+
+beacause Java Script is a synchronous language ,which part of code is executed at first  dosent wait the rest of the code .
+ */ 
+
+function One(fun){
+    setTimeout(() => {
+        console.log("One");
+        fun(Three)
+    }, 3000);
+}
+
+
+
+
+function Two(func){
+    setTimeout(() => {
+        console.log("Two");
+        func()
+
+    }, 2000);
+}
+
+
+function Three(){
+    setTimeout(() => {
+        console.log("Three");
+    }, 1000);
+}
+
+
+One(function(params){
+    Two(function(params){
+        Three()
+    })
+})
+
